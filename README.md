@@ -4,16 +4,17 @@
 
 ## what it is
 
-<You get GTA6 on PC no clickbait!>
+You get GTA6 on PC no clickbait!
 
 ## what input it collects
 
-<if you click the button, you definitely get the game completely for free.>
+if you click the button, you definitely get the game completely for free.
 
 ## screenshot
 
 <!-- drag a screenshot or a gif into this file on github.com to upload it -->
-![screenshot](screenshot.png)
+![screenshot](<img width="1168" height="529" alt="image" src="https://github.com/user-attachments/assets/9f6f7e47-e323-481d-8390-f406bc8a6129" />
+)
 
 ## live
 
