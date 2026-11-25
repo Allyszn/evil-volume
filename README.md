@@ -1,19 +1,25 @@
-# <this is a test>
+# Text editor inspired by Chrome Extension Papier
 
 <!-- This README is the front door of your project: the gallery shows its first lines. -->
 
-## what it is
+## what is it
 
-You get GTA6 on PC no clickbait!
+This is a minimalistic text editor in browser inspired by the chrome extension Papier that has been sadly discontinued, and that I can't use because is it not supported on Firefox. 
 
 ## what input it collects
 
-if you click the button, you definitely get the game completely for free.
+This is a text editor, anything you type will be saved on screen.
+Click the title above to rename this note, and pick a background below.
+Shortcuts (then press space)
+  # , ## , ### at the start of a line make headings
+  - makes a bullet list
+  [] makes a task, click the box to check it
+  [x] makes one that is already done
 
 ## screenshot
 
 <!-- drag a screenshot or a gif into this file on github.com to upload it -->
-![screenshot](<img width="1168" height="529" alt="image" src="https://github.com/user-attachments/assets/9f6f7e47-e323-481d-8390-f406bc8a6129" />
+![screenshot](
 )
 
 ## live
