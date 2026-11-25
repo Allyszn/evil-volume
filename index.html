@@ -1,108 +1,46 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>To-do List</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      background: #292b47;
-      color: #eceae3;
-      font: 16px/1.5 ui-monospace, monospace;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>my evil input</title>
+<style>
+  /* Everything you make goes inside #stage: exactly 800 × 400 pixels. The gallery shows
+     this box (shrunk to fit), so anything outside it won't be seen. */
+  html, body { margin: 0; background: #292b47; color: #eceae3; font: 16px/1.5 ui-monospace, Menlo, Consolas, monospace; }
+  #stage {
+    width: 800px; height: 400px; overflow: hidden; position: relative;
+    display: grid; place-items: center; text-align: center;
+    background: #23243d;
+  }
 
-    main {
-      width: min(400px, calc(100% - 40px));
-      padding: 24px;
-      background: #23243d;
-      border-radius: 12px;
-    }
-
-    form {
-      display: flex;
-      gap: 8px;
-    }
-
-    input {
-      flex: 1;
-      padding: 10px;
-      border: 0;
-      border-radius: 6px;
-    }
-
-    button {
-      padding: 10px 14px;
-      border: 0;
-      border-radius: 6px;
-      color: inherit;
-      background: #51537f;
-      cursor: pointer;
-    }
-
-    ul {
-      padding: 0;
-      list-style: none;
-    }
-
-    li {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-top: 8px;
-      padding: 8px;
-      background: #3f4168;
-      border-radius: 6px;
-    }
-
-    li.completed span {
-      text-decoration: line-through;
-      opacity: 0.6;
-    }
-
-    li span {
-      cursor: pointer;
-    }
-  </style>
+  /* ---- the example below: delete it and build your own ---- */
+  .vol { font-size: 64px; margin: 0; }
+  button { font: inherit; color: inherit; background: #3f4168; border: 0; border-radius: 6px; padding: .6rem 1.2rem; cursor: pointer; }
+  .hint { color: #8d8aa6; font-size: 14px; }
+</style>
 </head>
 <body>
-  <main>
-    <h1>To-do List</h1>
-    <form id="todo-form">
-      <input id="todo-input" type="text" placeholder="Add a task" required>
-      <button type="submit">Add</button>
-    </form>
-    <ul id="todo-list"></ul>
-  </main>
-
-  <script>
-    const form = document.querySelector("#todo-form");
-    const input = document.querySelector("#todo-input");
-    const list = document.querySelector("#todo-list");
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const item = document.createElement("li");
-      const text = document.createElement("span");
-      const remove = document.createElement("button");
-
-      text.textContent = input.value;
-      remove.textContent = "Remove";
-
-      text.addEventListener("click", () => item.classList.toggle("completed"));
-      remove.addEventListener("click", () => item.remove());
-
-      item.append(text, remove);
-      list.append(item);
-      input.value = "";
-      input.focus();
-    });
-  </script>
+<div id="stage">
+  <!-- example evil input: volume you have to pump up by hand, and it leaks back down -->
+  <div>
+    <p class="vol"><span id="vol">0</span>%</p>
+    <button id="pump">pump volume</button>
+    <p class="hint">it leaks. keep pumping.</p>
+  </div>
+</div>
+<script>
+  // the example: delete this too
+  let volume = 0;
+  const out = document.getElementById('vol');
+  document.getElementById('pump').addEventListener('click', () => {
+    volume = Math.min(100, volume + 7);
+    out.textContent = Math.round(volume);
+  });
+  setInterval(() => {
+    volume = Math.max(0, volume - 1);
+    out.textContent = Math.round(volume);
+  }, 120);
+</script>
 </body>
 </html>
-```
